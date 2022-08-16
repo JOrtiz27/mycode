@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 
-# Replace RPG starter project with this code when new instructions are live
 
 def showInstructions():
   #print a main menu and the commands
   print('''
-RPG Game
-========
+Wecolme You have been woken up and sent to HQ once there you are given orders to deliver a message to the front lines Charlie.co to not procceed with the attack on obj kilo since it is a trap by the federation and wait for airsupport as they will carpet bomb the object kilo
+
 Commands:
   go [direction]
   get [item]
-  fight [lost the fight]
+  fire [damage]
 ''')
 def showStatus():
   #print the player's current status
@@ -22,7 +21,7 @@ def showStatus():
   if "item" in rooms[currentRoom]:
     print('You see a ' + rooms[currentRoom]['item'])
   print("---------------------------")
-
+#the above print command displays to the player of where he is at and what he has
 #an inventory, which is initially empty
 inventory = []
 
@@ -30,7 +29,8 @@ inventory = []
 ## A dictionary linking a room to other rooms
 rooms = {
 
-            'Hall of doom' : {
+                  'Empire HQ': {
+                  'north' : 'the Empire HQ' 
                   'south' : 'The kitchen of horrors',
                   'east'  : 'bloody Room',
                   'item'  : 'sword of life'
@@ -57,9 +57,16 @@ rooms = {
          }
 
 #start the player in the Hall of doom
-currentRoom = 'Hall of doom'
+currentRoom = 'the Empire HQ'
 
 showInstructions()
+
+#the import random  generate random numbers.
+
+
+
+
+
 
 #loop forever
 while True:
@@ -103,10 +110,15 @@ while True:
     else:
       #tell them they can't get it
       print('Can\'t get ' + move[1] + '!')
-      
+
+    #if they type get to sequence a battle with shrek
+   
+
+
+
+
   ## Define how a player can win
-  if currentRoom == 'Garden of eden' and 'key' in inventory and 'potion of youth' in inventory:
-    print('You escaped the house of horrors with a cool  key and potion of youth ... YOU WON!')
+  if currentRoom == 'Garden of eden' and 'sword of life' in inventory and 'potion of youth' in inventory:
     break
 
   ## If a player enters a room with a monster
